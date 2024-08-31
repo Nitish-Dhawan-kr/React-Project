@@ -105,13 +105,14 @@ const redTextButton = {
     console.log(editor.selection.range);
     if (editor.selection.range.collapsed) {
       editor.s.insertHTML(`<font color="red">a</font>`);
-    } else {
-      let start = editor.selection.range.startOffset;
-      let end = editor.selection.range.endOffset;
-      editor.s.insertHTML(
-        `<font color="red">${text.substring(start, end)}</font>`
-      );
     }
+    //  else {
+    //   let start = editor.selection.range.startOffset;
+    //   let end = editor.selection.range.endOffset;
+    //   // editor.s.insertHTML(
+    //   //   `<font color="red">${text.substring(start, end)}</font>`
+    //   // );
+    // }
   },
 };
 
@@ -119,7 +120,7 @@ const editorConfig = {
   buttons: ["bold", "italic", "underline"],
   extraButtons: [redTextButton],
   hidePanels: ["link", "image", "video", "align", "format"],
-  // statusbar: false,
+  statusbar: false,
 };
 
 const Editor = () => {
